@@ -14,13 +14,13 @@ export default function Navbar() {
       ];
 
   return (
-    <nav className="w-10/12 mx-auto pt-10">
+    <nav className="w-10/12 mx-auto py-10">
         <div className="text-3xl md:hidden" onClick={()=>setOpen(!open)}>
             {
                 open === true?<IoMdClose></IoMdClose>:<IoMdMenu ></IoMdMenu>
             }
         </div>
-      <ul className={`md:flex absolute md:static ${open?'':'hidden'}`}>
+      <ul className={`md:flex bg-gray-400 md:bg-transparent rounded-lg p-2 absolute md:static ${open?'':'hidden'}`}>
       {/* <ul className={`md:flex md:static absolute duration-1000 ${open?'top-18':'-top-60'}`}> */}
       {
         routes.map(route => <Route 
