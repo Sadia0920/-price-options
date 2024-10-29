@@ -1,4 +1,4 @@
-import { LineChart, Line } from 'recharts';
+import { LineChart, Line, XAxis, YAxis } from 'recharts';
 export default function SubjectLineChart() {
 
 const subjectMarks = [
@@ -16,11 +16,13 @@ const subjectMarks = [
 
 return (
 <div className='w-10/12 mx-auto'>
-<h1 className='text-3xl font-bold'>Subject Marks Chart Of Students</h1>
-<LineChart width={400} height={400} data={subjectMarks}>
+<h1 className='text-3xl font-bold my-10'>Subject Marks Chart Of Students</h1>
+<LineChart width={800} height={300} data={subjectMarks}>
     <Line type="monotone" dataKey="math" stroke="#8884d8" />
     <Line type="monotone" dataKey="physics" stroke="red" />
     <Line type="monotone" dataKey="chemistry" stroke="green" />
+    <XAxis dataKey="name"></XAxis>
+    <YAxis></YAxis>
   </LineChart>
 </div>
 )
