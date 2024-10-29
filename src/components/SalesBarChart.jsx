@@ -1,4 +1,6 @@
 import { BarChart, Bar, XAxis, YAxis, Tooltip} from 'recharts';
+import { Audio } from 'react-loader-spinner'
+
 export default function SalesBarChart() {
 
     const salesData = [
@@ -29,7 +31,18 @@ export default function SalesBarChart() {
       ]
 
     return (
-    <div className='w-10/12 mx-auto'>
+    <div className='w-10/12 mx-auto mt-10'>
+       <div className='w-20 mx-auto'>
+       <Audio
+        height="80"
+        width="80"
+        radius="9"
+        color="green"
+        ariaLabel="three-dots-loading"
+        wrapperStyle
+        wrapperClass
+      />
+       </div>
     <h1 className='text-3xl font-bold my-10'>Sales data of 6 years</h1>
         <BarChart width={800} height={400} data={salesData}>
         <Bar dataKey="sales" fill="#8884d8" />
